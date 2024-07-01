@@ -1,0 +1,41 @@
+/* the custom properties (CSS variables) declared using the :root selector in main.css will work in utility.css as well. This is because CSS custom properties are scoped to the entire document when they are declared in the :root pseudo-class. */
+
+
+.caret{
+    display:block;
+    aspect-ratio: 1;
+    width:14px;
+    background: url('../assets/icon/caret-down.svg');
+}
+
+
+.wall{
+    background-color: var(--clr-navy);
+}
+
+.path{
+    background-color: var(--path-clr);
+}
+
+.visited{
+    background-color: var(--visited-clr);
+}
+.unvisited{
+    background-color: white;
+    border:1px solid var(--light-line);
+}
+
+.source
+{
+    background:url('../assets/icon/source.svg');
+}
+
+.target
+{
+    background: url('../assets/icon/target.svg');
+}
+
+.icon{
+    aspect-ratio: 1;
+    width:20px;
+}
