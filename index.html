@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijkstra Dynamics</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/utility.css">
+</head>
+<body>
+    <div class="template"> 
+        <header>
+
+            <nav>
+                <a href="/index.html" class="logo">DIJKSTRA DYNAMICS</a>
+                <div class="btn" id="Visualize">Visualize</div>
+                <ul class="nav-menu">
+                    <li><a href="#" id="clearPath">Clear Path</a></li>
+                    <li><a href="#" id="clearBoard">Clear Board</a></li>
+                    <li class="drop-box "><a href="#">Pixel <span class="caret"></span></a>
+                        <ul class="drop-menu">
+                            <li><a href="#">14px</a></li>
+                            <li><a href="#">16px</a></li>
+                             <li><a href="#">18px</a></li>
+                            <li><a href="#">20px</a></li>
+                            <li class="active"><a href="#">22px</a></li>
+                            <li><a href="#">24px</a></li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li class="drop-box"><a href="#">Speed <span class="caret"></span></a> 
+                        <ul class="drop-menu">
+                            <li><a href="#">slow</a></li>
+                            <li class="active"><a href="#">normal</a></li>
+                            <li><a href="#">fast</a></li>
+                        </ul>
+                    </li>    
+                   
+                    <li class="drop-box"><a href="#">Algorithm<span class="caret"></span></a>
+                        <ul class="drop-menu">
+                            <li class="active"><a href="#">Dijkstra's Algorithm</a></li>
+                        </ul> 
+                    </li>
+                </ul>
+            </nav>
+
+            <ul class="guide-bar">
+                <li>
+                    <span class="icon source"></span>
+                    <span class="text">Start Node</span>
+                </li>
+
+                <li>
+                    <span class="icon target"></span>
+                    <span class="text">Target Node</span>
+                </li>
+
+                <li>
+                    <span class="icon unvisited"></span>
+                    <span class="text">Unvisited Node</span>
+                </li>
+
+                <li>
+                    <span class="icon visited"></span>
+                    <span class="text">Visited Node</span>
+                </li>
+
+                <li>
+                    <span class="icon wall"></span>
+                    <span class="text">Wall Node</span>
+                </li>
+
+                <li>
+                    <span class="icon path"></span>
+                    <span class="text">Shortest-Path Node</span>
+                </li>
+
+                
+
+                
+            </ul>
+
+        </header>
+        <div id="board">
+
+        </div>
+    </div>
+</body>
+    <script src="app.js"></script>
+</html>
