@@ -1,0 +1,263 @@
+:root{
+    --clr-navy: #34495e;
+    --primary-clr: #6563ff;
+    --secondary-clr: #c4c3fc;
+    --light-line: #e4e2ed;
+    --cell-width : 22px;
+    --light-text: #686673;
+    --light-dot: #adaac0;
+    --wall-clr:#0c3547;
+    --path-clr:#fffe6a;
+    --visited-clr:#40cee3;
+}
+/*:root is a special CSS selector that matches the highest-level parent element in the HTML document, which is typically the <html> element. It is used to define global CSS variables (also known as custom properties) that can be accessed anywhere in the CSS file. By defining variables in :root, you ensure they are available throughout the entire document.
+Using custom properties in this way makes it easier to manage and update your styles, as you can change the value of a property in one place (the :root selector) and have that change reflected everywhere the property is used.And they can be accessed and used throughout the stylesheet using the var() function.*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    width: 100vw;
+    height:100vh;
+    
+    
+}
+
+.template{
+    width:100%;
+    height: 100%;
+    display:grid;
+    grid-template-rows:auto 1fr;
+    grid-gap:10px;
+    /* auto: The height of the first row is determined by the content inside it.
+       1fr: The second row takes up the remaining available space (fraction of the remaining space). 
+    */
+}
+
+
+/* .template>*{ 
+    /* This selects all direct child elements of the element with the class template. */
+    /*
+    border:1px solid black;
+} */
+
+/* Flexbox, or Flexible Box Layout, is a CSS layout model designed to help you create flexible and responsive layouts easily. Flexbox allows you to distribute space dynamically and align items within a container, even when their size is unknown or dynamic. */
+/* Flex Container: This is the parent element that holds the flex items. You make an element a flex container by setting its display property to flex or inline-flex. */
+
+/*
+Flex Container Properties
+display: Defines a flex container.
+
+flex: The container behaves as a block-level flex container.
+inline-flex: The container behaves as an inline-level flex container.
+flex-direction: Specifies the direction of the flex items.
+
+row (default): Items are placed in a row, from left to right.
+row-reverse: Items are placed in a row, from right to left.
+column: Items are placed in a column, from top to bottom.
+column-reverse: Items are placed in a column, from bottom to top.
+flex-wrap: Controls whether the flex items should wrap or not.
+
+nowrap (default): All items are placed in a single line.
+wrap: Items wrap to the next line if necessary.
+wrap-reverse: Items wrap to the next line in reverse order.
+justify-content: Aligns flex items along the main axis (horizontally in a row).
+
+flex-start (default): Items are aligned to the start of the container.
+flex-end: Items are aligned to the end of the container.
+center: Items are centered along the main axis.
+space-between: Items are evenly distributed with the first item at the start and the last item at the end.
+space-around: Items are evenly distributed with equal space around them.
+align-items: Aligns flex items along the cross axis (vertically in a row).
+
+stretch (default): Items are stretched to fill the container.
+flex-start: Items are aligned to the start of the cross axis.
+flex-end: Items are aligned to the end of the cross axis.
+center: Items are centered along the cross axis.
+baseline: Items are aligned along their baselines.
+align-content: Aligns the flex lines (used only if there are multiple lines).
+
+stretch (default): Lines are stretched to fill the container.
+flex-start: Lines are packed to the start of the container.
+flex-end: Lines are packed to the end of the container.
+center: Lines are centered.
+space-between: Lines are evenly distributed with the first line at the start and the last line at the end.
+space-around: Lines are evenly distributed with equal space around them.
+Flex Item Properties
+order: Controls the order in which items appear in the flex container.
+
+order: <integer>: The default is 0. Items with higher order values appear later.
+flex-grow: Defines the ability of a flex item to grow relative to the rest.
+
+flex-grow: <number>: The default is 0. A higher number means the item will take up more space.
+flex-shrink: Defines the ability of a flex item to shrink relative to the rest.
+
+flex-shrink: <number>: The default is 1. A higher number means the item will shrink more if necessary.
+flex-basis: Specifies the initial size of the flex item before space is distributed.
+
+flex-basis: <length>: The default is auto. Can be set in units like px, %, etc.
+align-self: Allows the alignment of an individual item to be different from the rest.
+
+Values: auto (default), flex-start, flex-end, center, baseline, stretch.
+*/
+
+nav{
+    padding: 5px;
+    display: flex;
+    align-items: center; /*vertically center mein align*/
+    justify-content: space-between; /*horizontally center mein align with equal spaces between items*/
+    background-color: var(--clr-navy);
+    white-space:nowrap;
+}
+
+.logo{
+    color:white;
+    font-size: 20px;
+    font-weight:600;
+    padding:0px 16px;
+}
+
+.btn{
+    background-color: var(--primary-clr);
+    color:white;
+    padding:8px 16px; /*top-bottom right-left*/
+    border-radius: 5px;
+    cursor:pointer;
+    justify-self: start;
+}
+
+.nav-menu{
+    display: flex;
+    align-items:center;
+}
+
+.nav-menu>li.active>a{
+    background-color: var(--primary-clr);
+    
+    
+}
+
+.nav-menu>li.active>a:hover{
+    color: white;
+}
+
+.nav-menu>li>a:hover{ /*A pseudo-class is used to define a special state of an element.
+    Note: a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective! a:active MUST come after a:hover in the CSS definition in order to be effective! Pseudo-class names are not case-sensitive.*/
+    color:var(--secondary-clr);
+}
+
+.nav-menu>li>a{
+    color: white;
+    padding:20px 16px;
+    display:block;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap:8px;
+}
+
+
+
+
+.drop-box{ /*When an element is positioned relatively, it means that its position is relative to its normal position within the document flow.*/
+    position:relative;
+}
+.drop-box.active  .drop-menu
+{
+    display:block;
+}
+.drop-box .drop-menu{ /*In CSS, .drop-box .drop-menu is a selector that targets an HTML element with the class drop-menu that is a descendant of an element with the class drop-box.*/
+    position: absolute; /*When an element is positioned absolutely,The element is removed from the document flow, and other elements will not flow around it.The element is positioned relative to its nearest positioned ancestor (i.e., an element with a non-static position, such as relative, absolute, or fixed).
+    The element is removed from the document flow, meaning it doesn't take up space and doesn't affect the layout of surrounding elements.The element's position is calculated based on the specified values (e.g., top, right, bottom, left) relative to its nearest positioned ancestor.
+Other elements will ignore the absolutely positioned element and flow as if it didn't exist.*/
+    right:0;
+    top:calc(100% + 15px);
+    background-color: var(--clr-navy);
+    min-width: 120px;
+    padding:4px;
+    border-radius: 8px;
+    display:none;
+    z-index:100;
+
+    /*The z-index property in CSS controls the vertical stacking order of elements that overlap. It only works on positioned elements (i.e., elements with a position value of relative, absolute, fixed, or sticky).
+
+Here's how z-index works:
+
+Stacking Context: Elements with a higher z-index value are stacked above elements with a lower z-index value.
+Positioned Elements: The z-index property only applies to elements that are positioned. If an element is not positioned, it will be stacked according to the document flow.*/
+    
+}
+
+.drop-menu>li>a:hover,.drop-menu>li.active>a{
+    background-color: var(--primary-clr);
+}
+
+#board{
+    overflow: hidden;
+}
+
+.drop-menu>li>a{
+    color:white;
+    padding:8px;
+    display:block;
+    border-radius: 4px;
+}
+
+.guide-bar{
+    display: flex;
+    gap:16px;
+    padding:8px;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+.guide-bar>li{
+    display: flex;
+    align-items: center;
+    gap:4px;
+}
+
+.row{
+    display:flex;
+}
+.col{
+    aspect-ratio: 1;
+    width: 100%;
+    border:1px solid var(--light-line);
+}
+
+
+/*
+ Media queries are used in CSS to apply styles to a webpage depending on the characteristics of the device displaying the webpage.
+@media: This is the keyword that starts the media query. It tells the browser that the enclosed CSS rules should only be applied under certain conditions.
+
+screen: This specifies the type of media to which the styles will apply. In this case, screen refers to computer screens, tablets, smartphones, etc. Other types can include print for printers.
+
+and: This is a logical operator that combines multiple conditions. In this case, it combines the media type (screen) with a condition about the width of the screen.
+
+(max-width: 1000px): This is a condition that specifies the maximum width of the screen. If the screen width is 1000 pixels or less, the CSS rules inside the braces {} will be applied.*/
+
+@media screen and (max-width:1000px)
+{
+    nav{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr; /*grid-template-columns: 1fr 1fr 1fr;: This defines the columns of the grid. The grid will have three columns, each taking up an equal fraction of the available space (1fr means one fraction unit).*/
+        grid-row-gap: 8px; /*This sets the gap (spacing) between the rows of the grid to 8 pixels.*/
+    }
+    .nav-menu{
+        grid-column:1/-1;
+        /*
+        This will make the element start at the first grid line and span all the way to the last grid line (just before the last grid line).
+        The grid-column property in CSS Grid Layout is used to define how an element should be placed within the grid columns. It specifies the starting and ending points of the grid item's columns.
+        grid-column: 1 / -1;: This specifies that the element with the class nav-menu should span from the first column to the last column in the grid. In CSS Grid Layout, 1 / -1 is a shorthand way of saying "start at the first column and span to the last column." Negative column numbers count from the end, so -1 refers to the last column.
+        */
+        
+        width:max-content;
+    }
+}
+
